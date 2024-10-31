@@ -3,13 +3,12 @@
 // Solution: The following programme prints Welcome to Pune using escape sequences \n, \t, \
 //          and \".
 #include <stdio.h>
-int main()
-{
+
+void printWelcomeMessage() {
     printf("Welcome\nto\nPune\n");
     printf("Welcome\tto\tPune\t");
     printf("Welcome\\to\\Pune\\");
     printf("Welcome to Pune");
-    return 0;
 }
 
 // LAB 4
@@ -18,21 +17,19 @@ int main()
 //           implicit and explicit type conversion.
 #include <stdio.h>
 #include <conio.h>
-int main()
-{
+
+void calculateAverage() {
     float marks[5], sum = 0, avg;
     int i;
     clrscr();
     printf("Enter marks of 5 subjects:\n");
-    for (i = 0; i < 5; i++)
-    {
+    for (i = 0; i < 5; i++) {
         printf("Enter marks of subject %d: ", i + 1);
         scanf("%f", &marks[i]);
         sum += marks[i];
     }
     avg = sum / 5.0;
     printf("Average = %.2f\n", avg);
-    return 0;
 }
 
 // LAB 5
@@ -41,22 +38,20 @@ int main()
 //           It ensures that the programme cannot handle more than four digits.
 #include <stdio.h>
 #include <conio.h>
-int main()
-{
+
+void calculateSumOfDigits() {
     int num1, num2, sum = 0, i;
     clrscr();
     printf("Enter first number: ");
     scanf("%d", &num1);
     printf("Enter second number: ");
     scanf("%d", &num2);
-    for (i = 0; i < 4; i++)
-    {
+    for (i = 0; i < 4; i++) {
         sum += (num1 % 10);
         num1 /= 10;
     }
     sum += num2;
     printf("Sum of digits of first number = %d\n", sum);
-    return 0;
 }
 
 // ADVANCED EXERCISES
@@ -64,8 +59,8 @@ int main()
 // Solution: The following programme adds two numbers and stores the result in a third variable.
 #include <stdio.h>
 #include <conio.h>
-int main()
-{
+
+void addTwoNumbers() {
     int num1, num2, sum;
     clrscr();
     printf("Enter first number: ");
@@ -74,5 +69,102 @@ int main()
     scanf("%d", &num2);
     sum = num1 + num2;
     printf("Sum of two numbers = %d\n", sum);
+}
+
+//[2] Add the programme to swap to variables using a 3rd variable and without using a 3rd variable
+// Solution: The following programme swaps two variables using a 3rd variable and without using a
+//           3rd variable.
+#include <stdio.h>
+#include <conio.h>
+
+void swapTwoNumbers() {
+    int num1, num2, temp;
+    clrscr();
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    // Swapping using a 3rd variable
+    temp = num1;
+    num1 = num2;
+    num2 = temp;
+    printf("Swapped numbers using a 3rd variable: %d %d\n", num1, num2);
+
+    // Swapping without using a 3rd variable
+    num1 = num1 + num2;
+    num2 = num1 - num2;
+    num1 = num1 - num2;
+    printf("Swapped numbers without using a 3rd variable: %d %d\n", num1, num2);
+}
+
+//[3] Write a programme to calculate net salary of an employee Accept basic salary (BS) from the user
+//HRA is 20% of BS
+//DA is 40% of BS
+//PF is 10% of gross salary
+//gross salary is BS+HRA+DA
+//Net salary =  Gross salary - PF
+// Solution: The following programme calculates the net salary of an employee after deducting tax and insurance.
+#include <stdio.h>
+#include <conio.h>
+
+void calculateNetSalary() {
+    float bs, hra, da, pf, gross, net;
+    clrscr();
+    printf("Enter basic salary: ");
+    scanf("%f", &bs);
+
+    hra = 0.2 * bs;
+    da = 0.4 * bs;
+    gross = bs + hra + da;
+    pf = 0.1 * gross;
+    net = gross - pf;
+
+    printf("Basic Salary: %.2f\n", bs);
+    printf("HRA: %.2f\n", hra);
+    printf("DA: %.2f\n", da);
+    printf("Gross Salary: %.2f\n", gross);
+    printf("PF: %.2f\n", pf);
+    printf("Net Salary: %.2f\n", net);
+}
+
+//[4] Accept a character from the user. It may be alphabet, digit or any character.Print its ascii value.
+//solution :  The following programme accepts a character from the user and prints its ASCII value.
+#include <stdio.h>
+#include <conio.h>
+
+void printAsciiValue() {
+    char ch;
+    clrscr();
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+    printf("ASCII value of %c = %d\n", ch, ch);
+}
+
+//[5] Print, the following table forgiven data types student is expected to print the correct information for size range and format specifier columns.
+//Table contains these columns = data types, size, range and Format specifiers.Data types are char, int, float, double, long int, long double
+//Solution: The following programme prints the table for different data types in C.
+#include <stdio.h>
+#include <limits.h>
+
+void printDataTypeTable() {
+    printf("Data Types\tSize\t\tRange\t\t\tFormat Specifiers\n");
+    printf("char\t\t%zu\t\t-128 to 127\t\t%%c\n", sizeof(char));
+    printf("int\t\t%zu\t\t%d to %d\t\t%%d\n", sizeof(int), INT_MIN, INT_MAX);
+    printf("float\t\t%zu\t\t1.2E-38 to 3.4E+38\t%%f\n", sizeof(float));
+    printf("double\t\t%zu\t\t2.3E-308 to 1.7E+308\t%%lf\n", sizeof(double));
+    printf("long int\t%zu\t\t%ld to %ld\t\t%%ld\n", sizeof(long int), LONG_MIN, LONG_MAX);
+    printf("long double\t%zu\t\t3.4E-4932 to 1.1E+4932\t%%Lf\n", sizeof(long double));
+}
+
+int main() {
+    printWelcomeMessage();
+    calculateAverage();
+    calculateSumOfDigits();
+    addTwoNumbers();
+    swapTwoNumbers();
+    calculateNetSalary();
+    printAsciiValue();
+    printDataTypeTable();
     return 0;
 }
