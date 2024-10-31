@@ -1,14 +1,51 @@
 #include <stdio.h>
-#include <limits.h>
-
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <conio.h>
 int main()
 {
-    printf("Data Types\tSize\t\tRange\t\t\tFormat Specifiers\n");
-    printf("char\t\t%zu\t\t-128 to 127\t\t%%c\n", sizeof(char));
-    printf("int\t\t%zu\t\t%d to %d\t\t%%d\n", sizeof(int), INT_MIN, INT_MAX);
-    printf("float\t\t%zu\t\t1.2E-38 to 3.4E+38\t%%f\n", sizeof(float));
-    printf("double\t\t%zu\t\t2.3E-308 to 1.7E+308\t%%lf\n", sizeof(double));
-    printf("long int\t%zu\t\t%ld to %ld\t\t%%ld\n", sizeof(long int), LONG_MIN, LONG_MAX);
-    printf("long double\t%zu\t\t3.4E-4932 to 1.1E+4932\t%%Lf\n", sizeof(long double));
+    int empid, deptno;
+    printf("Enter EMPID: ");
+    scanf("%d", &empid);
+    printf("Enter DEPTNO: ");
+    scanf("%d", &deptno);
+
+    char dept_name[20], designation_code, designation[20];
+
+    switch (deptno)
+    {
+        case 10:
+            strcpy(dept_name, "purchase");
+            designation_code = 'M';
+            strcpy(designation, "manager");
+            break;
+        case 20:
+            strcpy(dept_name, "sales");
+            designation_code = 'A';
+            strcpy(designation, "Analyst");
+            break;
+        case 30:
+            strcpy(dept_name, "production");
+            designation_code = 'W';
+            strcpy(designation, "worker");
+            break;
+        case 40:
+            strcpy(dept_name, "Marketing");
+            designation_code = 'S';
+            strcpy(designation, "sales-person");
+            break;
+        case 50:
+            strcpy(dept_name, "accounts");
+            designation_code = 'C';
+            strcpy(designation, "clerk");
+            break;
+        default:
+            printf("Invalid DEPTNO!\n");
+            return 0;
+    }
+
+    printf("Employee with EMPID %d works in %s dept as %s\n", empid, dept_name, designation);
+
     return 0;
 }
