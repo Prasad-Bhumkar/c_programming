@@ -1,4 +1,4 @@
-//LAB 1
+//LAB 2
 #include <stdio.h>
 
 // Function to calculate the area of a circle
