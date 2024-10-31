@@ -1,18 +1,18 @@
-//LAB 2
+//  LAB 2
 #include <stdio.h>
 
-// Function to calculate the area of a circle
+// 1. Function to calculate the area of a circle
 float calculateCircleArea(int radius) {
     const float pi = 3.14159;
     return pi * (float)radius * (float)radius;
 }
 
-// Function to find the maximum of two numbers
+// 2. Function to find the maximum of two numbers
 int findMaximum(int a, int b) {
     return (a > b) ? a : b;
 }
 
-// Function to check if a number is odd or even
+// 3. Function to check if a number is odd or even
 void checkOddOrEven(int num) {
     if (num % 2 == 0) {
         printf("Number is even\n");
@@ -21,7 +21,7 @@ void checkOddOrEven(int num) {
     }
 }
 
-// Function to check if a number is positive, negative or zero
+// 4. Function to check if a number is positive, negative or zero
 void checkNumberType(int num) {
     if (num > 0) {
         printf("Number is positive\n");
@@ -32,7 +32,7 @@ void checkNumberType(int num) {
     }
 }
 
-// Function to check if a person is eligible for a license
+// 5. Function to check if a person is eligible for a license
 void checkLicenseEligibility(int age) {
     if (age >= 18) {
         printf("You are eligible for license\n");
@@ -41,7 +41,7 @@ void checkLicenseEligibility(int age) {
     }
 }
 
-// Function to print multiples of five less than 100
+// 6. Function to print multiples of five less than 100
 void printMultiplesOfFive() {
     for (int i = 5; i < 100; i += 5) {
         printf("%d ", i);
@@ -49,7 +49,7 @@ void printMultiplesOfFive() {
     printf("\n");
 }
 
-// Function to calculate the sum of even numbers from 1 to 20
+// 7. Function to calculate the sum of even numbers from 1 to 20
 int calculateSumOfEvenNumbers() {
     int sum = 0;
     for (int i = 2; i <= 20; i += 2) {
@@ -58,7 +58,7 @@ int calculateSumOfEvenNumbers() {
     return sum;
 }
 
-// Function to calculate the factorial of a number
+// 8. Function to calculate the factorial of a number
 long long calculateFactorial(int num) {
     long long factorial = 1;
     for (int i = 1; i <= num; i++) {
@@ -67,7 +67,7 @@ long long calculateFactorial(int num) {
     return factorial;
 }
 
-// Function to check if a number is prime
+// 9. Function to check if a number is prime
 void checkPrimeNumber(int num) {
     int flag = 0;
     for (int i = 2; i < num; i++) {
@@ -83,7 +83,7 @@ void checkPrimeNumber(int num) {
     }
 }
 
-// Function to calculate the sum of digits of a number
+// 10. Function to calculate the sum of digits of a number
 int calculateSumOfDigits(int num) {
     int sum = 0;
     while (num != 0) {
