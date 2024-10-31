@@ -1,23 +1,22 @@
+#include <stdio.h>
+#include <conio.h>
+#include <limits.h>
+
 // LAB 3
 // Problem statement: write a programme to print Welcome to Pune using escape sequences \n, \t, \r and \".Observe the differences in the output.
 // Solution: The following programme prints Welcome to Pune using escape sequences \n, \t, \
 //          and \".
-#include <stdio.h>
-
 void printWelcomeMessage() {
     printf("Welcome\nto\nPune\n");
     printf("Welcome\tto\tPune\t");
     printf("Welcome\\to\\Pune\\");
-    printf("Welcome to Pune");
+    printf("Welcome to Pune\n");
 }
 
 // LAB 4
-// Problem statement: write a programme to accept marks of 5 subjects from the user and calculate their average. UUseimplicit and explicit type conversion.
+// Problem statement: write a programme to accept marks of 5 subjects from the user and calculate their average. Use implicit and explicit type conversion.
 // Solution: The following programme accepts marks of 5 subjects from the user and calculates their average using
 //           implicit and explicit type conversion.
-#include <stdio.h>
-#include <conio.h>
-
 void calculateAverage() {
     float marks[5], sum = 0, avg;
     int i;
@@ -33,12 +32,9 @@ void calculateAverage() {
 }
 
 // LAB 5
-// Problem statement : Write the programme to calculate the sum of digits of a user and 3rd number. Ensure that your programme can not more than four digits Also print the output in the following manner.If the number is 1234 the output should be 10.
+// Problem statement: Write the programme to calculate the sum of digits of a user and 3rd number. Ensure that your programme can not handle more than four digits. Also print the output in the following manner. If the number is 1234 the output should be 10.
 // Solution: The following programme calculates the sum of digits of a user and 3rd number.
 //           It ensures that the programme cannot handle more than four digits.
-#include <stdio.h>
-#include <conio.h>
-
 void calculateSumOfDigits() {
     int num1, num2, sum = 0, i;
     clrscr();
@@ -55,11 +51,8 @@ void calculateSumOfDigits() {
 }
 
 // ADVANCED EXERCISES
-//[1] Write the programme to add two numbers and store the result in a third variable Then print the result
+// [1] Write the programme to add two numbers and store the result in a third variable. Then print the result.
 // Solution: The following programme adds two numbers and stores the result in a third variable.
-#include <stdio.h>
-#include <conio.h>
-
 void addTwoNumbers() {
     int num1, num2, sum;
     clrscr();
@@ -71,12 +64,9 @@ void addTwoNumbers() {
     printf("Sum of two numbers = %d\n", sum);
 }
 
-//[2] Add the programme to swap to variables using a 3rd variable and without using a 3rd variable
+// [2] Add the programme to swap two variables using a 3rd variable and without using a 3rd variable.
 // Solution: The following programme swaps two variables using a 3rd variable and without using a
 //           3rd variable.
-#include <stdio.h>
-#include <conio.h>
-
 void swapTwoNumbers() {
     int num1, num2, temp;
     clrscr();
@@ -98,16 +88,10 @@ void swapTwoNumbers() {
     printf("Swapped numbers without using a 3rd variable: %d %d\n", num1, num2);
 }
 
-//[3] Write a programme to calculate net salary of an employee Accept basic salary (BS) from the user
-//HRA is 20% of BS
-//DA is 40% of BS
-//PF is 10% of gross salary
-//gross salary is BS+HRA+DA
-//Net salary =  Gross salary - PF
+// [3] Write a programme to calculate net salary of an employee. Accept basic salary (BS) from the user.
+// HRA is 20% of BS, DA is 40% of BS, PF is 10% of gross salary.
+// gross salary is BS + HRA + DA, Net salary = Gross salary - PF.
 // Solution: The following programme calculates the net salary of an employee after deducting tax and insurance.
-#include <stdio.h>
-#include <conio.h>
-
 void calculateNetSalary() {
     float bs, hra, da, pf, gross, net;
     clrscr();
@@ -128,11 +112,8 @@ void calculateNetSalary() {
     printf("Net Salary: %.2f\n", net);
 }
 
-//[4] Accept a character from the user. It may be alphabet, digit or any character.Print its ascii value.
-//solution :  The following programme accepts a character from the user and prints its ASCII value.
-#include <stdio.h>
-#include <conio.h>
-
+// [4] Accept a character from the user. It may be alphabet, digit or any character. Print its ASCII value.
+// Solution: The following programme accepts a character from the user and prints its ASCII value.
 void printAsciiValue() {
     char ch;
     clrscr();
@@ -141,12 +122,9 @@ void printAsciiValue() {
     printf("ASCII value of %c = %d\n", ch, ch);
 }
 
-//[5] Print, the following table forgiven data types student is expected to print the correct information for size range and format specifier columns.
-//Table contains these columns = data types, size, range and Format specifiers.Data types are char, int, float, double, long int, long double
-//Solution: The following programme prints the table for different data types in C.
-#include <stdio.h>
-#include <limits.h>
-
+// [5] Print the following table for given data types. Student is expected to print the correct information for size, range, and format specifier columns.
+// Table contains these columns = data types, size, range, and format specifiers. Data types are char, int, float, double, long int, long double.
+// Solution: The following programme prints the table for different data types in C.
 void printDataTypeTable() {
     printf("Data Types\tSize\t\tRange\t\t\tFormat Specifiers\n");
     printf("char\t\t%zu\t\t-128 to 127\t\t%%c\n", sizeof(char));
