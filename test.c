@@ -1,32 +1,68 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <conio.h> // For kbhit() and getch()
-#include <unistd.h> // For usleep()
 
-#define ROWS 25
-#define COLS 80
-#define CHAR_TO_PRINT '😊'  // Character to print (smiling face)
-#define EMPTY_SPACE ' '      // Character for empty space
-
-void printGrid() {
-    for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
-            // Randomly decide whether to print the character or an empty space
-            putchar((rand() % 2 == 0) ? CHAR_TO_PRINT : EMPTY_SPACE);
+void drawRectangle(int length, int breadth)
+{
+    for (int i = 0; i < length; i++)
+    {
+        for (int j = 0; j < breadth; j++)
+        {
+            if (i == 0)
+            { // Top border
+                if (j == 0)
+                {
+                    printf("%c", 218); // Top-left corner
+                }
+                else if (j == breadth - 1)
+                {
+                    printf("%c", 191); // Top-right corner
+                }
+                else
+                {
+                    printf("%c", 196); // Horizontal border
+                }
+            }
+            else if (i == length - 1)
+            { // Bottom border
+                if (j == 0)
+                {
+                    printf("%c", 192); // Bottom-left corner
+                }
+                else if (j == breadth - 1)
+                {
+                    printf("%c", 217); // Bottom-right corner
+                }
+                else
+                {
+                    printf("%c", 196); // Horizontal border
+                }
+            }
+            else
+            { // Middle rows
+                if (j == 0 || j == breadth - 1)
+                {
+                    printf("%c", 179); // Vertical borders
+                }
+                else
+                {
+                    printf(" "); // Inside space
+                }
+            }
         }
-        putchar('\n'); // Move to the next line after each row
+        printf("\n");
     }
 }
 
-int main() {
-    srand((unsigned int)time(NULL)); // Seed the random number generator
+int main()
+{
+    int length, breadth;
 
-    while (!kbhit()) { // Loop until a key is pressed
-        printGrid();   // Print the grid of characters
-        usleep(200000); // Sleep for 200 milliseconds to slow down the output
-        system("clear"); // Clear the console (use "cls" for Windows)
+    printf("Enter length and breadth: ");
+    if (scanf("%d %d", &length, &breadth) != 2 || length <= 0 || breadth <= 0)
+    {
+        printf("Invalid input. Please enter positive integers for length and breadth.\n");
+        return 1; // Exit with error code
     }
 
+    drawRectangle(length, breadth);
     return 0;
 }
