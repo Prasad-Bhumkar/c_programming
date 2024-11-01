@@ -125,11 +125,43 @@ void printDaysInMonth() {
 }
 
 int main() {
-    checkLeapYear();
-    checkLeapYearTernary();
-    calculateCommission();
-    simpleCalculator();
-    findMaximum();
-    printDaysInMonth();
+    int choice;
+    while (1) {
+        printf("Menu:\n");
+        printf("1. Check Leap Year (if-else)\n");
+        printf("2. Check Leap Year (ternary operator)\n");
+        printf("3. Calculate Commission\n");
+        printf("4. Simple Calculator\n");
+        printf("5. Find Maximum of Three Numbers\n");
+        printf("6. Print Days in Month\n");
+        printf("7. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1:
+                checkLeapYear();
+                break;
+            case 2:
+                checkLeapYearTernary();
+                break;
+            case 3:
+                calculateCommission();
+                break;
+            case 4:
+                simpleCalculator();
+                break;
+            case 5:
+                findMaximum();
+                break;
+            case 6:
+                printDaysInMonth();
+                break;
+            case 7:
+                printf("Exiting...\n");
+                return 0;
+            default:
+                printf("Invalid choice!\n");
+        }
+    }
     return 0;
 }
