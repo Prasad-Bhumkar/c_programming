@@ -414,19 +414,23 @@ void matchstickGame()
 void generatePyramidPattern()
 
 {
-    int rows = 3; // You can change this value to generate more rows
-
-    for (int i = 1; i <= rows; i++)
+    int i, j;
+    for (i = 1; i <= 3; i++)
     {
-        // Print decreasing part
-        for (int j = i; j >= 1; j--)
+        for (j = 1; j <= 5; j++)
         {
-            printf("%d", j);
-        }
-        // Print increasing part
-        for (int j = 2; j <= i; j++)
-        {
-            printf("%d", j);
+            if (j == 3)
+            {
+                printf("1 ");
+            }
+            else if (j == 2 || j == 4)
+            {
+                printf("%d ", i);
+            }
+            else
+            {
+                printf("  ");
+            }
         }
         printf("\n");
     }

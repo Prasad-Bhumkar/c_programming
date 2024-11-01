@@ -1,68 +1,54 @@
 #include <stdio.h>
 
-void drawRectangle(int length, int breadth)
-{
-    for (int i = 0; i < length; i++)
-    {
-        for (int j = 0; j < breadth; j++)
-        {
-            if (i == 0)
-            { // Top border
-                if (j == 0)
-                {
-                    printf("%c", 218); // Top-left corner
-                }
-                else if (j == breadth - 1)
-                {
-                    printf("%c", 191); // Top-right corner
-                }
-                else
-                {
-                    printf("%c", 196); // Horizontal border
-                }
-            }
-            else if (i == length - 1)
-            { // Bottom border
-                if (j == 0)
-                {
-                    printf("%c", 192); // Bottom-left corner
-                }
-                else if (j == breadth - 1)
-                {
-                    printf("%c", 217); // Bottom-right corner
-                }
-                else
-                {
-                    printf("%c", 196); // Horizontal border
-                }
-            }
-            else
-            { // Middle rows
-                if (j == 0 || j == breadth - 1)
-                {
-                    printf("%c", 179); // Vertical borders
-                }
-                else
-                {
-                    printf(" "); // Inside space
-                }
-            }
+int main() {
+    int n = 3; // Number of rows/columns
+
+    // Print the top row with whitespaces
+    for (int i = 0; i < n - 1; i++) {
+        printf("  ");
+    }
+    for (int i = 1; i <= n; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+
+    // Print the remaining rows with whitespaces and numbers
+    for (int i = 1; i <= n; i++) {
+        // Print left side whitespaces
+        for (int j = 1; j <= n - i; j++) {
+            printf("  ");
         }
-        printf("\n");
+
+        // Print left side numbers
+        printf("%d ", i);
+
+        // Print middle whitespaces
+        for (int j = 1; j <= n - i - 1; j++) {
+            printf("  ");
+        }
+
+        // Print middle numbers
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+
+        // Print right side whitespaces
+        for (int j = 1; j <= n - i - 1; j++) {
+            printf("  ");
+        }
+
+        // Print right side numbers
+        for (int j = i; j >= 1; j--) {
+            printf("%d ", j);
+        }
+
+        // Print right side whitespaces
+        for (int j = 1; j <= n - i; j++) {
+            printf("  ");
+        }
+
+        printf("%d\n", i);
     }
-}
 
-int main()
-{
-    int length, breadth;
-
-    printf("Enter length and breadth: ");
-    if (scanf("%d %d", &length, &breadth) != 2 || length <= 0 || breadth <= 0)
-    {
-        printf("Invalid input. Please enter positive integers for length and breadth.\n");
-        return 1; // Exit with error code
-    }
-
-    drawRectangle(length, breadth);
     return 0;
 }
